@@ -45,3 +45,19 @@ let Atletico_Madrid = {
     top_scorers: ["Aragonés", "Griezmann", "Torez"],
     worldwide_fans: 400
 };
+
+let Barcelona = {
+    team_name: "Barcelona",
+    city: "Barcelona",
+    country: "Spain",
+    top_scorers: ["Messi", "Suarez", "Puyol"],
+    worldwide_fans: 738
+};
+
+db.collection('soccer_teams').doc("Real_Madrid").set(Real_Madrid);
+db.collection('soccer_teams').doc("Manchester_United").set(Manchester_United);
+db.collection('soccer_teams').doc("Manchester_City").set(Manchester_City);
+db.collection('soccer_teams').doc("Brazil_National_Team").set(Brazil_National_Team);
+db.collection('soccer_teams').doc("Argentina_National_Team").set(Argentina_National_Team);
+db.collection('soccer_teams').doc("Atletico_Madrid").set(Atletico_Madrid);
+db.collection('soccer_teams').doc("Barcelona").set(Barcelona);
