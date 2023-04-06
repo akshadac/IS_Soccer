@@ -57,11 +57,7 @@ let Barcelona = {
 db.collection("soccer_teams").doc("Real_Madrid").add(Real_Madrid);
 db.collection("soccer_teams").doc("Manchester_United").add(Manchester_United);
 db.collection("soccer_teams").doc("Manchester_City").add(Manchester_City);
-db.collection("soccer_teams")
-  .doc("Brazil_National_Team")
-  .add(Brazil_National_Team);
-db.collection("soccer_teams")
-  .doc("Argentina_National_Team")
-  .add(Argentina_National_Team);
+db.collection("soccer_teams").doc("Brazil_National_Team").add(Brazil_National_Team);
+db.collection("soccer_teams").doc("Argentina_National_Team").add(Argentina_National_Team);
 db.collection("soccer_teams").doc("Atletico_Madrid").add(Atletico_Madrid);
 db.collection("soccer_teams").doc("Barcelona").add(Barcelona);
