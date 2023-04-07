@@ -189,11 +189,9 @@ db.collection("soccer_teams").doc("Barcelona").update({
   team_name: "FC Barcelona",
 });
 
-// b
-
 db.collection("soccer_teams")
   .doc("Real_Madrid")
-  .update({ top_scorers: firebase.firestore.FieldValue.pop() });
+  .update({ top_scorers: firebase.firestore.FieldValue.arrayRemove("Hazard") });
 
 db.collection("soccer_teams")
   .doc("Real_Madrid")
@@ -201,7 +199,34 @@ db.collection("soccer_teams")
 
 db.collection("soccer_teams")
   .doc("Barcelona")
-  .update({ top_scorers: firebase.firestore.FieldValue.pop() });
+  .update({ top_scorers: firebase.firestore.FieldValue.arrayRemove("Puyol") });
 db.collection("soccer_teams")
   .doc("Barcelona")
   .update({ top_scorers: firebase.firestore.FieldValue.arrayUnion("Deco") });
+
+// b
+db.collection("soccer_teams")
+  .doc("Barcelona")
+  .add({color: {
+    home: "Red",
+    away: "Gold"
+  }});
+
+db.collection("soccer_teams")
+  .doc("Real_Madrid")
+  .add({color: {
+    home: "White",
+    away: "Black"
+  }});
+
+db.collection("soccer_teams")
+  .doc("Real_Madrid")
+  .update({color: {
+    away: "Purple"
+  }});
+
+db.collection("soccer_teams")
+  .doc("Barcelona")
+  .update({color: {
+    away: "Pink"
+  }});
