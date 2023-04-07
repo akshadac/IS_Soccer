@@ -65,3 +65,143 @@ db.collection("soccer_teams")
   .set(Argentina_National_Team);
 db.collection("soccer_teams").doc("Atletico_Madrid").set(Atletico_Madrid);
 db.collection("soccer_teams").doc("Barcelona").set(Barcelona);
+
+// // Q1
+// db.collection("soccer_teams")
+//   .where("country", "==", "Spain")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// // Q2
+// db.collection("soccer_teams")
+//   .where("country", "==", "Spain")
+//   .where("city", "==", "Madrid")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// // Q3 WIP
+// db.collection("soccer_teams")
+//   .where("team_name", "array-contains", "National")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// // Q4
+// db.collection("soccer_teams")
+//   .where("country", "!=", "Spain")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// // Q5
+// db.collection("soccer_teams")
+//   .where("country", "not-in", ["Spain", "England"])
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// // Q6
+// db.collection("soccer_teams")
+//   .where("worldwide_fans", ">=", 700)
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// // Q7
+// db.collection("soccer_teams")
+//   .where("worldwide_fans", "<=", 600)
+//   .where("worldwide_fans", ">=", 500)
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// // Q8
+// db.collection("soccer_teams")
+//   .where("top_scorers", "array-contains", "Ronaldo")
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// // Q9
+// db.collection("soccer_teams")
+//   .where("top_scorers", "array-contains-any", ["Ronaldo", "Messi", "Maradona"])
+//   .get()
+//   .then((response) => {
+//     let docs = response.docs;
+//     // loop through the docs array
+//     docs.forEach((doc) => {
+//       console.log(doc.data().team_name);
+//     });
+//   });
+
+// Task 3
+// a
+
+db.collection("soccer_teams").doc("Real_Madrid").update({
+  worldwide_fans: 811,
+  team_name: "Real Madrid FC",
+});
+
+db.collection("soccer_teams").doc("Barcelona").update({
+  worldwide_fans: 747,
+  team_name: "FC Barcelona",
+});
+
+// b
+
+db.collection("soccer_teams")
+  .doc("Real_Madrid")
+  .update({ top_scorers: firebase.firestore.FieldValue.pop() });
+
+db.collection("soccer_teams")
+  .doc("Real_Madrid")
+  .update({ top_scorers: firebase.firestore.FieldValue.arrayUnion("Crispo") });
+
+db.collection("soccer_teams")
+  .doc("Barcelona")
+  .update({ top_scorers: firebase.firestore.FieldValue.pop() });
+db.collection("soccer_teams")
+  .doc("Barcelona")
+  .update({ top_scorers: firebase.firestore.FieldValue.arrayUnion("Deco") });
