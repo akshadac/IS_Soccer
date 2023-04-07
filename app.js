@@ -207,14 +207,14 @@ db.collection("soccer_teams")
 // b
 db.collection("soccer_teams")
   .doc("Barcelona")
-  .add({color: {
+  .set({color: {
     home: "Red",
     away: "Gold"
   }});
 
 db.collection("soccer_teams")
   .doc("Real_Madrid")
-  .add({color: {
+  .set({color: {
     home: "White",
     away: "Black"
   }});
