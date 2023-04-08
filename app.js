@@ -1,3 +1,6 @@
+// Task 1
+
+// Data set up
 let Real_Madrid = {
   team_name: "Real Madrid",
   city: "Madrid",
@@ -54,6 +57,7 @@ let Barcelona = {
   worldwide_fans: 738,
 };
 
+// Creating Collections from the data
 db.collection("soccer_teams").doc("Real_Madrid").set(Real_Madrid);
 db.collection("soccer_teams").doc("Manchester_United").set(Manchester_United);
 db.collection("soccer_teams").doc("Manchester_City").set(Manchester_City);
@@ -66,17 +70,23 @@ db.collection("soccer_teams")
 db.collection("soccer_teams").doc("Atletico_Madrid").set(Atletico_Madrid);
 db.collection("soccer_teams").doc("Barcelona").set(Barcelona);
 
-// // Q1
-// db.collection("soccer_teams")
-//   .where("country", "==", "Spain")
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Task 2
+// Q1
+// let t2q1 = document.querySelector('#t2q1');
+
+// const search => {
+// let common = [];
+
+db.collection("soccer_teams")
+  .where("country", "==", "Spain")
+  .get()
+  .then((response) => {
+    let docs = response.docs;
+    // loop through the docs array
+    docs.forEach((doc) => {
+      console.log(doc.data().team_name);
+    });
+  });
 
 // // Q2
 // db.collection("soccer_teams")
