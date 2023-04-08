@@ -207,26 +207,14 @@ db.collection("soccer_teams")
 // b
 db.collection("soccer_teams")
   .doc("Barcelona")
-  .set({color: {
-    home: "Red",
-    away: "Gold"
-  }});
+  .set({ color: { home: "Red", away: "Gold" } }, { merge: true });
 
 db.collection("soccer_teams")
   .doc("Real_Madrid")
-  .set({color: {
-    home: "White",
-    away: "Black"
-  }});
+  .set({ color: { home: "White", away: "Black" } }, { merge: true });
 
 db.collection("soccer_teams")
   .doc("Real_Madrid")
-  .update({color: {
-    away: "Purple"
-  }});
+  .update({ "color.away": "Purple" });
 
-db.collection("soccer_teams")
-  .doc("Barcelona")
-  .update({color: {
-    away: "Pink"
-  }});
+db.collection("soccer_teams").doc("Barcelona").update({ "color.away": "Pink" });
