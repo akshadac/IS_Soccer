@@ -82,109 +82,145 @@ db.collection("soccer_teams")
   .get()
   .then((response) => {
     let docs = response.docs;
+    var q1 = document.getElementById('q1');
     // loop through the docs array
+    var tr = "<tr>";
     docs.forEach((doc) => {
-      console.log(doc.data().team_name);
+      tr += "<td>" + doc.data().team_name + "</td></tr>";
+      // console.log(doc.data().team_name);
     });
+    q1.innerHTML += tr;
   });
 
-// // Q2
-// db.collection("soccer_teams")
-//   .where("country", "==", "Spain")
-//   .where("city", "==", "Madrid")
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Q2
+db.collection("soccer_teams")
+  .where("country", "==", "Spain")
+  .where("city", "==", "Madrid")
+  .get()
+  .then((response) => {
+    let docs = response.docs;
+    var q2 = document.getElementById('q2');
+    // loop through the docs array
+    var tr = "<tr>";
+    docs.forEach((doc) => {
+            tr += "<td>" + doc.data().team_name + "</td></tr>";
+            // console.log(doc.data().team_name)
+    });
+    q2.innerHTML += tr;
+  });
 
-// // Q3 WIP
-// db.collection("soccer_teams")
-//   .where("team_name", "array-contains", "National")
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Q3 WIP
+db.collection("soccer_teams")
+  .where("team_name", "array-contains", "National")
+  .get()
+  .then((response) => {
+    let docs = response.docs;
+    var q3 = document.getElementById('q3');
+    // loop through the docs array
+    var tr = "<tr>";
+    docs.forEach((doc) => {
+      tr += "<td>" + doc.data().team_name + "</td></tr>";
+      // console.log(doc.data().team_name);
+    });
+    q3.innerHTML += tr;
+  });
 
-// // Q4
-// db.collection("soccer_teams")
-//   .where("country", "!=", "Spain")
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Q4
+db.collection("soccer_teams")
+  .where("country", "!=", "Spain")
+  .get()
+  .then((response) => {
+    let docs = response.docs;
+    var q4 = document.getElementById('q4');
+    // loop through the docs array
+    var tr = "<tr>";
+    docs.forEach((doc) => {
+      tr += "<td>" + doc.data().team_name + "</td></tr>";
+      // console.log(doc.data().team_name);
+    });
+    q4.innerHTML += tr;
+  });
 
-// // Q5
-// db.collection("soccer_teams")
-//   .where("country", "not-in", ["Spain", "England"])
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Q5
+db.collection("soccer_teams")
+  .where("country", "not-in", ["Spain", "England"])
+  .get()
+  .then((response) => {
+    let docs = response.docs;
+    var q5 = document.getElementById('q5');
+    // loop through the docs array
+    var tr = "<tr>";
+    docs.forEach((doc) => {
+      tr += "<td>" + doc.data().team_name + "</td></tr>";
+      // console.log(doc.data().team_name);
+    });
+    q5.innerHTML += tr;
+  });
 
-// // Q6
-// db.collection("soccer_teams")
-//   .where("worldwide_fans", ">=", 700)
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Q6
+db.collection("soccer_teams")
+  .where("worldwide_fans", ">=", 700)
+  .get()
+  .then((response) => {
+    let docs = response.docs;
+    var q6 = document.getElementById('q6');
+    // loop through the docs array
+    var tr = "<tr>";
+    docs.forEach((doc) => {
+      tr += "<td>" + doc.data().team_name + "</td></tr>";
+      // console.log(doc.data().team_name);
+    });
+    q6.innerHTML += tr;
+  });
 
-// // Q7
-// db.collection("soccer_teams")
-//   .where("worldwide_fans", "<=", 600)
-//   .where("worldwide_fans", ">=", 500)
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Q7
+db.collection("soccer_teams")
+  .where("worldwide_fans", "<=", 600)
+  .where("worldwide_fans", ">=", 500)
+  .get()
+  .then((response) => {
+    let docs = response.docs;
+    var q7 = document.getElementById('q7');
+    // loop through the docs array
+    var tr = "<tr>";
+    docs.forEach((doc) => {
+      tr += "<td>" + doc.data().team_name + "</td></tr>";
+      // console.log(doc.data().team_name);
+    });
+    q7.innerHTML += tr;
+  });
 
-// // Q8
-// db.collection("soccer_teams")
-//   .where("top_scorers", "array-contains", "Ronaldo")
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Q8
+db.collection("soccer_teams")
+  .where("top_scorers", "array-contains", "Ronaldo")
+  .get()
+  .then((response) => {
+    let docs = response.docs;
+    var q8 = document.getElementById('q8');
+    // loop through the docs array
+    var tr = "<tr>";
+    docs.forEach((doc) => {
+      tr += "<td>" + doc.data().team_name + "</td></tr>";
+      // console.log(doc.data().team_name);
+    });
+    q8.innerHTML += tr;
+  });
 
-// // Q9
-// db.collection("soccer_teams")
-//   .where("top_scorers", "array-contains-any", ["Ronaldo", "Messi", "Maradona"])
-//   .get()
-//   .then((response) => {
-//     let docs = response.docs;
-//     // loop through the docs array
-//     docs.forEach((doc) => {
-//       console.log(doc.data().team_name);
-//     });
-//   });
+// Q9
+db.collection("soccer_teams")
+  .where("top_scorers", "array-contains-any", ["Ronaldo", "Messi", "Maradona"])
+  .get()
+  .then((response) => {
+      let docs = response.docs;
+      var q9 = document.getElementById('q9');
+      // loop through the docs array
+      var tr = "<tr>";
+      docs.forEach((doc) => {
+        tr += "<td>" + doc.data().team_name + "</td></tr>";
+        // console.log(doc.data().team_name);
+      });
+      q9.innerHTML += tr;
+    });
 
 // Task 3
 // a
